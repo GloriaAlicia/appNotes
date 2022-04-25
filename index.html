@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Mis notas</title>
+</head>
+<body id="body" class="oscuro">
+    <button id="activar">modo oscuro</button>
+    <main class="container">
+        <h1>Notas</h1>
+        <section class="wrapper">
+            <article class="notes">
+                <div class="category">
+                    <div class="topics">
+                        categoria
+                    </div>
+                    <div class="tags">
+                        etiquetas
+                    </div>
+                </div>
+                <h3>title</h3>
+                <p class="text">No está afiliado a la W3C, sin embargo es un excelente sitio web para aprender a programar. El contenido incluye guías y referencias de una gran variedad de tecnologias web.</p>
+                <div class="buttons">
+                    <button class="chosen">Ver</button>
+                    <button class="stop">Eliminar</button>
+                </div>
+            </article>
+            <article class="notes">
+                <h3>MDN</h3>
+                <p class="text">MDN Web Docs es un recurso para desarrolladores, mantenidos por la comunidad de desarrolladores voluntarios, que aloja documentos sobre diferentes tecnologías web.</p>
+            </article>
+            <article class="notes">
+                <h3>FreeCodeCamp</h3>
+                <p class="text">Un sitio sin animos de lucro, la enseñanza comienza con tutoriales que introducen al estudiante en HTML, CSS y JavaScript y se va progresando por medio de proyectos.</p>
+            </article>
+            <article class="notes">
+                <h3>Roadmap.sh</h3>
+                <p class="text">Si estás perdido sobre qué aprender y en que momento esta es una de las mejores guias.
+                Cuenta con una gran variedad de rutas</p>
+            </article>
+        </section>
+        <!--create a new note-->
+        <article class="notes new">
+            Agregar nueva nota
+        </article>
+<!--ventana para crear nueva nota-->
+        <section class="windowModal">
+            <article class="modal oscuro hidden">
+                <div class="content">
+                    <h2>Crear una nueva nota</h2>
+                    <div class="form">
+                        <div class="campo">
+                            <label for="titulo">Titulo</label>
+                            <input id="titulo" name="titulo" type="text" placeholder="Agrege un titulo" class="entradas oscuro">
+                        </div>
+    
+                        <div class="campo">
+                            <label for="text">Nota</label>
+                            <textarea name="textOfNote" id="text" class="textarea oscuro" placeholder="Escribe aquí"></textarea>
+                        </div>
+    
+                        <button id="new">Crear</button>
+                        <button id="close">cerrar</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
