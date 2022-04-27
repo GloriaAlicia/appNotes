@@ -30,10 +30,6 @@
     max-height: 20vh;
     overflow: hidden;
 }
-/*.fade{
-    background-image: linear-gradient(rgba(255, 255, 255, 0.082), white);
-    z-index: 1;
-}*/
 .text{
     max-height: 40%;
     overflow: hidden;
@@ -77,7 +73,7 @@ div.buttons{
 /*********agregar nuevo elemento**************/
 .new{
     cursor: pointer;
-    margin-top: 3vw;
+    margin-bottom: 3vw;
     border: dashed 1px var(--wait);
     display: flex;
     justify-content: center;
@@ -112,7 +108,7 @@ div.buttons{
 .content h2{
     margin-bottom: 3vh;
 }
-.campo{
+.field{
     margin: 0 auto 2vw auto;
     width: 90%;
     display: flex;
@@ -125,8 +121,11 @@ div.buttons{
     resize: none;
 }
 .form textarea{
-    height: 30vh;
+    height: 25vh;
     overflow: hidden scroll;
+}
+.field label{
+    font-size: 1.4em;
 }
 #new{
     background-color: #000;
@@ -136,6 +135,10 @@ div.buttons{
 }
 .hidden{
     display: none;
+}
+.alerta{
+    font-size: 0.8em;
+    color: var(--stop);
 }
 /*************media queries********************/
 @media screen and (max-width:500px){

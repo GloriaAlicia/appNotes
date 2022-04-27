@@ -10,7 +10,12 @@
 </head>
 <body id="body" class="oscuro">
     <button id="activar">modo oscuro</button>
+    
     <main class="container">
+        <!--create a new note-->
+        <article class="notes new">
+            <p>Agregar nueva nota</p>
+        </article>
         <h1>Notas</h1>
         <section class="wrapper">
             <article class="notes">
@@ -43,24 +48,22 @@
                 Cuenta con una gran variedad de rutas</p>
             </article>
         </section>
-        <!--create a new note-->
-        <article class="notes new">
-            Agregar nueva nota
-        </article>
 <!--ventana para crear nueva nota-->
         <section class="windowModal">
             <article class="modal oscuro hidden">
                 <div class="content">
                     <h2>Crear una nueva nota</h2>
                     <div class="form">
-                        <div class="campo">
+                        <div class="field">
                             <label for="titulo">Titulo</label>
-                            <input id="titulo" name="titulo" type="text" placeholder="Agrege un titulo" class="entradas oscuro">
+                            <input id="titulo" name="titulo" type="text" placeholder="Agrege un titulo" class="oscuro">
+                            <p id="errorTitulo" class="alerta hidden">El titulo no puede estar vacío</p>
                         </div>
     
-                        <div class="campo">
+                        <div class="field">
                             <label for="text">Nota</label>
                             <textarea name="textOfNote" id="text" class="textarea oscuro" placeholder="Escribe aquí"></textarea>
+                            <p id="errorTexto" class="alerta hidden">El texto no puede estar vacío</p>
                         </div>
     
                         <button id="new">Crear</button>
