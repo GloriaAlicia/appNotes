@@ -80,6 +80,9 @@ div.buttons{
     align-items: center;
     text-align: center;
     color: var(--wait);
+    padding: min(2vw, 1vw);
+    min-height: 10vh;
+    max-height: 20vh;
 }
 .windowModal{
     position: fixed;

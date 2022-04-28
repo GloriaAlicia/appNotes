@@ -13,7 +13,7 @@
     
     <main class="container">
         <!--create a new note-->
-        <article class="notes new">
+        <article class="new">
             <p>Agregar nueva nota</p>
         </article>
         <h1>Notas</h1>
@@ -37,15 +37,10 @@
             <article class="notes">
                 <h3>MDN</h3>
                 <p class="text">MDN Web Docs es un recurso para desarrolladores, mantenidos por la comunidad de desarrolladores voluntarios, que aloja documentos sobre diferentes tecnologías web.</p>
-            </article>
-            <article class="notes">
-                <h3>FreeCodeCamp</h3>
-                <p class="text">Un sitio sin animos de lucro, la enseñanza comienza con tutoriales que introducen al estudiante en HTML, CSS y JavaScript y se va progresando por medio de proyectos.</p>
-            </article>
-            <article class="notes">
-                <h3>Roadmap.sh</h3>
-                <p class="text">Si estás perdido sobre qué aprender y en que momento esta es una de las mejores guias.
-                Cuenta con una gran variedad de rutas</p>
+                <div class="buttons">
+                    <button class="chosen">Ver</button>
+                    <button class="stop">Eliminar</button>
+                </div>
             </article>
         </section>
 <!--ventana para crear nueva nota-->
@@ -74,5 +69,7 @@
         </section>
     </main>
     <script src="./scripts/app.js"></script>
+    <script src="./scripts/eliminar.js"></script>
+    <script src="./scripts/modoOscuro.js"></script>
 </body>
 </html>
