@@ -1,10 +1,11 @@
 :root{
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-    --primary-color: #1b3a4b;
-    --wait:rgb(133, 125, 125);
-    --chosen: rgb(32, 102, 32);
-    --stop: rgb(221, 34, 34);
+    --primary-color: #224d64;
+    --wait:rgb(126, 121, 121);
+    --chosen: rgb(34, 126, 34);
+    --stop: rgb(196, 49, 49);
+    --modoOscuro: rgb(22, 22, 22);
 }
 *{
     outline: transparent;
@@ -30,6 +31,10 @@
     max-height: 20vh;
     overflow: hidden;
 }
+/*pendiente*/
+.title{
+    color: var(--primary-color);
+}
 .text{
     max-height: 40%;
     overflow: hidden;
@@ -44,31 +49,38 @@
     color: var(--primary-color);
 }
 /*********botones**************/
+button{
+    cursor: pointer;
+}
 div.buttons{
     display: flex;
     justify-content: center;
     align-content: center;
-    /* box-shadow: rgba(255, 255, 255) 0px -10px 20px; */
 }
 .buttons button{
     border: solid 1px var(--primary-color);
-    background-color: white;
     flex-grow: 1;
     padding:0 1vw;
-}
-.buttons button{
     cursor: pointer;
+    background-color: transparent;
 }
 .buttons .chosen{
     margin-right: 1vw;
 }
-.chosen:hover{
+.chosen{
     color: var(--chosen);
     border: solid 1px var(--chosen);
 }
-.stop:hover{
+.chosen:hover{
+    border: solid 2px var(--chosen);
+}
+.stop{
     color: var(--stop);
     border: solid 1px var(--stop);
+    background-color: transparent;
+}
+.stop:hover{
+    border: solid 2px var(--stop);
 }
 /*********agregar nuevo elemento**************/
 .new{
@@ -97,13 +109,19 @@ div.buttons{
     0%{opacity: 0%; transform: scale(0);}
     100%{opacity: 100%; transform: scale(1);}
 }
+.fadeOut{
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.38s;
+}
 .modal{
     animation-name: show;
     animation-duration: 0.5s;
     position: fixed;
 
     background-color: white;
-    box-shadow: #000 0px 0px 10px;
+    box-shadow:  -14px 14px 43px #e0e0e0,
+    14px -14px 43px #ffffff4d;
     height: 60vh;
     width: 70vw;
     padding: 3vw;
@@ -134,7 +152,7 @@ div.buttons{
     background-color: #000;
     color: white;
     cursor: pointer;
-    padding: 2vw;
+    padding: 0.7vw 1.2vw;
 }
 .hidden{
     display: none;
@@ -144,14 +162,14 @@ div.buttons{
     color: var(--stop);
 }
 /*************media queries********************/
-@media screen and (max-width:500px){
+@media screen and (max-width:560px){
     .container{
-        padding: 5vw;
+        padding: 4.5vw;
     }
 }
 /*************modo oscuro provicional********************/
 .oscuro{
-    background-color: #000;
+    background-color: var(--modoOscuro);
     color: white;
 }
 .oscuro.entradas{

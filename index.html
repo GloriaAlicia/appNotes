@@ -13,34 +13,21 @@
     
     <main class="container">
         <!--create a new note-->
+        <h1>Notas</h1>
+        <label for="filtrar"><img src="./assets/icons/hashtag-solid.svg" width="16"alt="icon-search"></label>
+        <input type="text" name="filtro" id="filtrar" placeholder="buscar">
+
         <article class="new">
             <p>Agregar nueva nota</p>
         </article>
-        <h1>Notas</h1>
+        
         <section class="wrapper">
             <article class="notes">
+                <h3 class="title">Bienvenido</h3>
                 <div class="category">
-                    <div class="topics">
-                        categoria
-                    </div>
-                    <div class="tags">
-                        etiquetas
-                    </div>
+                    <p>etiquetas</p>
                 </div>
-                <h3>title</h3>
-                <p class="text">No está afiliado a la W3C, sin embargo es un excelente sitio web para aprender a programar. El contenido incluye guías y referencias de una gran variedad de tecnologias web.</p>
-                <div class="buttons">
-                    <button class="chosen">Ver</button>
-                    <button class="stop">Eliminar</button>
-                </div>
-            </article>
-            <article class="notes">
-                <h3>MDN</h3>
-                <p class="text">MDN Web Docs es un recurso para desarrolladores, mantenidos por la comunidad de desarrolladores voluntarios, que aloja documentos sobre diferentes tecnologías web.</p>
-                <div class="buttons">
-                    <button class="chosen">Ver</button>
-                    <button class="stop">Eliminar</button>
-                </div>
+                <p class="text">prueba</p>
             </article>
         </section>
 <!--ventana para crear nueva nota-->
@@ -48,7 +35,7 @@
             <article class="modal oscuro hidden">
                 <div class="content">
                     <h2>Crear una nueva nota</h2>
-                    <div class="form">
+                    <form class="form">
                         <div class="field">
                             <label for="titulo">Titulo</label>
                             <input id="titulo" name="titulo" type="text" placeholder="Agrege un titulo" class="oscuro">
@@ -57,13 +44,11 @@
     
                         <div class="field">
                             <label for="text">Nota</label>
-                            <textarea name="textOfNote" id="text" class="textarea oscuro" placeholder="Escribe aquí"></textarea>
+                            <textarea name="textoNota" id="text" class="textarea oscuro" placeholder="Escribe aquí"></textarea>
                             <p id="errorTexto" class="alerta hidden">El texto no puede estar vacío</p>
                         </div>
-    
                         <button id="new">Crear</button>
-                        <button id="close">cerrar</button>
-                    </div>
+                    </form>
                 </div>
             </article>
         </section>
@@ -71,5 +56,8 @@
     <script src="./scripts/app.js"></script>
     <script src="./scripts/eliminar.js"></script>
     <script src="./scripts/modoOscuro.js"></script>
+    <script src="./scripts/filtrar.js"></script>
+    <script src="./scripts/localStorage.js"></script>
 </body>
+<!--HACER LISTAS PARA TACHAR, CRONOMETRO pomodoro, rutina-->
 </html>

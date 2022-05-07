@@ -1,17 +1,16 @@
 let modal = document.querySelector(".modal");
 /**open button */
 let buttonOpen = document.querySelector(".new");
-buttonOpen.addEventListener("click", openModal)
+buttonOpen.addEventListener("click", openModal);
 function openModal() {
-    modal.classList.toggle("hidden")
+    modal.classList.toggle("hidden");
 }
-
 let buttonNew = document.getElementById("new");
 buttonNew.addEventListener("click", verificarYCrear);
 
-let fields = document.querySelector(".field")
 let errorTitulo = document.getElementById("errorTitulo");
 let errorTexto = document.getElementById("errorTexto");
+let form = document.querySelector(".form");
 
 function validarEntrada(inputs){
     if (inputs.length == 0){
@@ -19,29 +18,23 @@ function validarEntrada(inputs){
     }
    return false
 }
-
-function verificarYCrear() {
+function verificarYCrear(evento) {
+    evento.preventDefault();
     let entradaTitulo = document.getElementById("titulo").value;
     let entradaTexto = document.getElementById("text").value;
+    let nuevaNota = obtenerDatos(form);
 
-    let note = document.createElement("article");
-    /**no pude usar event.preventdefault() porque no use una arrow function, y no la use porque creo que podría usar la misma función en otro lado aunque no estoy segura */ 
     if(!validarEntrada(entradaTitulo)) {
         errorTitulo.classList.add("hidden");
-        note.appendChild(crearElementos("h3", entradaTitulo));
     }
     if (!validarEntrada(entradaTexto)) {
         errorTexto.classList.add("hidden");
-        note.appendChild(crearElementos("p",entradaTexto,"text"));
     }
     if(!validarEntrada(entradaTitulo) && !validarEntrada(entradaTexto)){
-        let wrapper = document.querySelector(".wrapper");
-        note.classList.add("notes");
-        wrapper.appendChild(note);
-        note.appendChild(eliminar());
+        agregarNota(nuevaNota);
+        saveNote(nuevaNota);
         closen();
     }
-
 /**si la entrada esta vacía muestra error */
     if(validarEntrada(entradaTitulo)){
         errorTitulo.classList.remove("hidden");
@@ -51,20 +44,48 @@ function verificarYCrear() {
     }
 }
 
+
+function obtenerDatos(form){
+    /**form.name.value <- esto es del atributo name*/
+    let nuevaNota = {
+        id:generarId(),
+        titulo: form.titulo.value,
+        nota: form.textoNota.value
+    }
+    return nuevaNota;
+}
+
+
+function construirNota(nuevaNota){
+    let note = document.createElement("article");
+    note.classList.add("notes");
+
+    note.appendChild(crearElementos("h3", nuevaNota.titulo));
+    note.appendChild(crearElementos("p",nuevaNota.nota,"text"));
+    note.appendChild(eliminar());
+    return note;
+}
+
+function agregarNota(nuevaNota){
+    let wrapper = document.querySelector(".wrapper");
+    let note = construirNota(nuevaNota);
+    note.setAttribute("number", nuevaNota.id);
+    wrapper.appendChild(note);
+    return note;
+}
+
+
+/*********funciones genericas para toda la página************* */
 function crearElementos(element,dato,clase) {
     let creando = document.createElement(element);
     creando.classList.add(clase);
     creando.textContent = dato;
     return creando;
 }
-
 /**close button */
-let buttonClose = document.getElementById("close");
-buttonClose.addEventListener("click", closen);
 function closen(){
     modal.classList.add("hidden");
-    document.getElementById("titulo").value = "";
-    document.getElementById("text").value = "";
+    document.querySelector(".form").reset();
     errorTitulo.classList.add("hidden");
     errorTexto.classList.add("hidden");
 }
