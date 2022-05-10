@@ -5,7 +5,7 @@ button.addEventListener("click", modo)
 function modo() {
     let titulo = document.getElementById("titulo");
     let textarea = document.getElementById("text");
-    let todo = document.getElementById("body");
+    let todo = document.querySelector("body");
     let modal = document.querySelector(".modal");
     modal.classList.toggle("oscuro");
     todo.classList.toggle("oscuro");

@@ -1,3 +1,4 @@
+/**HACER LISTAS PARA TACHAR, CRONOMETRO pomodoro, rutina */
 let modal = document.querySelector(".modal");
 /**open button */
 let buttonOpen = document.querySelector(".new");
@@ -55,12 +56,13 @@ function obtenerDatos(form){
     return nuevaNota;
 }
 
+/*********funciones genericas para toda la página************* */
 
 function construirNota(nuevaNota){
     let note = document.createElement("article");
     note.classList.add("notes");
 
-    note.appendChild(crearElementos("h3", nuevaNota.titulo));
+    note.appendChild(crearElementos("h3", nuevaNota.titulo,"title"));
     note.appendChild(crearElementos("p",nuevaNota.nota,"text"));
     note.appendChild(eliminar());
     return note;
@@ -73,9 +75,6 @@ function agregarNota(nuevaNota){
     wrapper.appendChild(note);
     return note;
 }
-
-
-/*********funciones genericas para toda la página************* */
 function crearElementos(element,dato,clase) {
     let creando = document.createElement(element);
     creando.classList.add(clase);

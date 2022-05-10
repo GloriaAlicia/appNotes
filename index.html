@@ -4,31 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="icon" type="icon" href="note.ico"/>
     <title>Mis notas</title>
 </head>
-<body id="body" class="oscuro">
-    <button id="activar">modo oscuro</button>
-    
+<body class="oscuro">
+    <nav>
+        <ul><h1>Notas</h1></ul>
+        <ul>
+            <li>
+                <!--<button id="activar">act</button>-->
+            </li>
+            <li>
+                <input type="checkbox" name="darkMode" id="activar">
+                <label for="activar" class="switch"></label>
+            </li>
+        </ul>
+    </nav>
     <main class="container">
-        <!--create a new note-->
-        <h1>Notas</h1>
         <label for="filtrar"><img src="./assets/icons/hashtag-solid.svg" width="16"alt="icon-search"></label>
-        <input type="text" name="filtro" id="filtrar" placeholder="buscar">
-
+                <input type="text" name="filtro" id="filtrar" placeholder="buscar">
+        <!--create a new note-->
         <article class="new">
             <p>Agregar nueva nota</p>
         </article>
         
         <section class="wrapper">
             <article class="notes">
-                <h3 class="title">Bienvenido</h3>
-                <div class="category">
-                    <p>etiquetas</p>
-                </div>
-                <p class="text">prueba</p>
+                <h3>Bienvenido</h3>
+                <p class="text">nota default</p>
+                <button class="stop"></button>
             </article>
         </section>
 <!--ventana para crear nueva nota-->
@@ -59,6 +69,6 @@
     <script src="./scripts/modoOscuro.js"></script>
     <script src="./scripts/filtrar.js"></script>
     <script src="./scripts/localStorage.js"></script>
+    <script src="./scripts/random-blurred-gradient.js"></script>
 </body>
-<!--HACER LISTAS PARA TACHAR, CRONOMETRO pomodoro, rutina-->
 </html>

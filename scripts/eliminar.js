@@ -1,5 +1,5 @@
 function eliminar() {
-    let botonEliminar = (crearElementos("button","eliminar","stop"));
+    let botonEliminar = (crearElementos("button","","stop"));
 
     botonEliminar.addEventListener("click", (event)=>{
         let notaActual = event.target.parentNode;
