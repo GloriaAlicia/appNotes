@@ -61,10 +61,15 @@ function obtenerDatos(form){
 function construirNota(nuevaNota){
     let note = document.createElement("article");
     note.classList.add("notes");
+    let options = document.createElement("div");
+    options.classList.add("options");
 
     note.appendChild(crearElementos("h3", nuevaNota.titulo,"title"));
     note.appendChild(crearElementos("p",nuevaNota.nota,"text"));
-    note.appendChild(eliminar());
+    note.appendChild(options);
+
+    options.appendChild(eliminar());
+    options.appendChild(favorite());
     return note;
 }
 

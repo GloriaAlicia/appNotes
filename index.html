@@ -10,16 +10,13 @@
 
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="icon" type="icon" href="note.ico"/>
+    <link rel="icon" href="icon.png"/>
     <title>Mis notas</title>
 </head>
-<body class="oscuro">
+<body>
     <nav>
         <ul><h1>Notas</h1></ul>
         <ul>
-            <li>
-                <!--<button id="activar">act</button>-->
-            </li>
             <li>
                 <input type="checkbox" name="darkMode" id="activar">
                 <label for="activar" class="switch"></label>
@@ -43,19 +40,19 @@
         </section>
 <!--ventana para crear nueva nota-->
         <section class="windowModal">
-            <article class="modal oscuro hidden">
+            <article class="modal hidden">
                 <div class="content">
                     <h2>Crear una nueva nota</h2>
                     <form class="form">
                         <div class="field">
                             <label for="titulo">Titulo</label>
-                            <input id="titulo" name="titulo" type="text" placeholder="Agrege un titulo" class="oscuro">
+                            <input id="titulo" name="titulo" type="text" placeholder="Agrege un titulo">
                             <p id="errorTitulo" class="alerta hidden">El titulo no puede estar vacío</p>
                         </div>
     
                         <div class="field">
                             <label for="text">Nota</label>
-                            <textarea name="textoNota" id="text" class="textarea oscuro" placeholder="Escribe aquí"></textarea>
+                            <textarea name="textoNota" id="text" class="textarea" placeholder="Escribe aquí"></textarea>
                             <p id="errorTexto" class="alerta hidden">El texto no puede estar vacío</p>
                         </div>
                         <button id="new">Crear</button>

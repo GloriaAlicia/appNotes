@@ -1,14 +1,23 @@
-let color1 = "#d9bafe";
-/**let color2 = "#feb8b8"; */
-let color3 = "#f2bdf3";
-let color4 = "#a4e2fb";
+function favorite() {
+    let buttonFavorite = (crearElementos("button","","favorite"));
 
-document.addEventListener("DOMContentLoaded", (event)=>{
-    let notas = document.querySelectorAll(".notes");
-    notas.forEach(element => {
-        element.style.backgroundImage = "radial-gradient(farthest-side at "+ randomNumber() +" "+ randomNumber() +","+ color1 +",rgba(0,0,0,0)),    radial-gradient(circle farthest-side at "+ randomNumber() +" "+ randomNumber() +","+ color3 +" 0%,rgba(0,0,0,0)60%),radial-gradient(circle farthest-side at "+ randomNumber() +" "+ randomNumber() +","+ color4 +" 0%,rgba(0,0,0,0)60%)";
-      });
-})
+    buttonFavorite.addEventListener("click", (event)=>{
+        let notaActual = event.target.parentNode.parentNode;
+        notaActual.setAttribute("favorite", "true");
+      //  let favorite = notaActual.getAttribute("number");
+        gradientMash(notaActual);
+        localStorage.setItem("favorites","true");
+    })
+    return buttonFavorite;
+}
+let color1 = "#d9bafeb0";
+let color3 = "#f2bdf3c9";
+let color4 = "#a4e2fbd2";
+
+
+function gradientMash(element){
+    element.style.backgroundImage = "radial-gradient(farthest-side at "+ randomNumber() +" "+ randomNumber() +","+ color1 +",rgba(0,0,0,0)),    radial-gradient(circle farthest-side at "+ randomNumber() +" "+ randomNumber() +","+ color3 +" 0%,rgba(0,0,0,0)60%),radial-gradient(circle farthest-side at "+ randomNumber() +" "+ randomNumber() +","+ color4 +" 0%,rgba(0,0,0,0)60%)";
+}
 
 function randomNumber(){
     let min = 0;

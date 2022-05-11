@@ -2,7 +2,7 @@ function eliminar() {
     let botonEliminar = (crearElementos("button","","stop"));
 
     botonEliminar.addEventListener("click", (event)=>{
-        let notaActual = event.target.parentNode;
+        let notaActual = event.target.parentNode.parentNode;
         let idAqui = notaActual.getAttribute("number");
         notaActual.classList.add("fadeOut");
 
