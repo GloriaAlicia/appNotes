@@ -50,6 +50,7 @@ function obtenerDatos(form){
     /**form.name.value <- esto es del atributo name*/
     let nuevaNota = {
         id:generarId(),
+        favorite: "false",
         titulo: form.titulo.value,
         nota: form.textoNota.value
     }
@@ -69,7 +70,8 @@ function construirNota(nuevaNota){
     note.appendChild(options);
 
     options.appendChild(eliminar());
-    options.appendChild(favorite());
+    options.appendChild(favorite(nuevaNota));
+    options.appendChild(labelHeart(nuevaNota));
     return note;
 }
 
@@ -77,6 +79,16 @@ function agregarNota(nuevaNota){
     let wrapper = document.querySelector(".wrapper");
     let note = construirNota(nuevaNota);
     note.setAttribute("number", nuevaNota.id);
+
+    if(nuevaNota.favorite == true){
+        note.setAttribute("favorite", "true");
+        gradientMash(note);
+        favorite(nuevaNota).checked = true;
+        console.log(favorite(nuevaNota));
+     } else {
+        note.setAttribute("favorite", "false");
+     }
+
     wrapper.appendChild(note);
     return note;
 }

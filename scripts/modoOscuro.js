@@ -5,30 +5,16 @@ let titulo = document.getElementById("titulo");
 let textarea = document.getElementById("text");
 let todo = document.querySelector("body");
 modal = document.querySelector(".modal");
-
-
-/**
- * if (button.checked == "false") {
-    modo();
-} else {
-  //  button.checked;
-    modal.classList.remove("oscuro");
-    todo.classList.remove("oscuro");
-    titulo.classList.remove("oscuro");
-    textarea.classList.remove("oscuro");
-}
- */
-
+let filtro = document.getElementById("filtrar");
 
 
 function modo() {
-console.log(button.checked)
-
     saveDarkMode()
     modal.classList.toggle("oscuro");
     todo.classList.toggle("oscuro");
     titulo.classList.toggle("oscuro");
     textarea.classList.toggle("oscuro");
+    filtro.classList.toggle("oscuro");
 }
 /*****guardar en localStorage ********************/
 function saveDarkMode(){
@@ -51,5 +37,6 @@ document.addEventListener("DOMContentLoaded",function(event){
         todo.classList.remove("oscuro");
         titulo.classList.remove("oscuro");
         textarea.classList.remove("oscuro");
+        filtro.classList.remove("oscuro");
     }
  })

@@ -18,7 +18,7 @@ function deleteId(idAqui){
     let all = JSON.parse(localStorage.getItem("allNotes"));
     /**buscar el indice (id) | con cada vuelta compara el idActual*/
     let indexOfAll = all.findIndex(element => element.id == idAqui);
-    //splice elimina elementos de un array, (primerElemento,numeroDeElementosParaBorrar)
+    //splice elimina elementos de un array, (primerElemento numeroDeElementosParaBorrar)
     all.splice(indexOfAll, 1);
     let convertJson = JSON.stringify(all);
     localStorage.setItem("allNotes",convertJson);

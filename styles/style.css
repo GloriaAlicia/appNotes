@@ -22,6 +22,7 @@
 nav{
     position: sticky;
     top: 0;
+    margin: 0;
     overflow: hidden;
     backdrop-filter: blur(16px);
 }
@@ -95,6 +96,12 @@ h1{
     font-style: italic;
     font-size: 3rem;
 }
+h1, h2, h3, h4, h5{
+    margin: 0;
+}
+.notes p{
+    margin:0;
+}
 /*pendiente*/
 .text{
     max-height: 40%;
@@ -122,17 +129,25 @@ button{
 }
 .options{
     display: flex;
-    width: 60%;
-    justify-content: space-around;
-}
-.favorite::after{
-    content: url(../assets/icons/heart-solid.svg);
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .stop::after{
     content:url(../assets/icons/trash-solid.svg);
 }
-.stop:active{
-    background-color: var(--stop);
+.favorite{
+    display: flex;
+}
+input[type="checkbox"] + .favorite::after{
+    content: url(../assets/icons/heart-empty.svg);
+    justify-content:center;
+    align-items:center;
+}
+input[type="checkbox"]:checked + .favorite::after{
+    content: url(../assets/icons/heart-solid.svg);
+    justify-content:center;
+    align-items:center;
 }
 /*********agregar nuevo elemento**************/
 .new{

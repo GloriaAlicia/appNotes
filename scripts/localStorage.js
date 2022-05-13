@@ -6,16 +6,6 @@
     getItem("keyName")
     setItem("name",value) <-- guardar una nueva llave con valor
  */
-function obtenerDatos(form){
-   /**form.name.value <- esto es del atributo name*/
-   let nuevaNota = {
-      id:generarId(),
-      titulo: form.titulo.value,
-      nota: form.textoNota.value
-   }
-   return nuevaNota;
-}
-/***********************************re asignar */
 function saveNote(nuevaNota){
       /**traer el contenido anterior de localStorage, o iniciar con array */
       let all = JSON.parse(localStorage.getItem("allNotes")) || [];
@@ -30,7 +20,7 @@ function saveNote(nuevaNota){
 document.addEventListener("DOMContentLoaded",function(event){
    let contenidoPrecreado = JSON.parse(localStorage.getItem("allNotes"));
    contenidoPrecreado.forEach(element => {
-     agregarNota(element)
+     agregarNota(element);
    });
 })
 /*************************************** */
