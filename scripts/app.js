@@ -1,17 +1,21 @@
-/**HACER LISTAS PARA TACHAR, CRONOMETRO pomodoro, rutina */
-let modal = document.querySelector(".modal");
-/**open button */
-let buttonOpen = document.querySelector(".new");
-buttonOpen.addEventListener("click", openModal);
-function openModal() {
-    modal.classList.toggle("hidden");
-}
-let buttonNew = document.getElementById("new");
-buttonNew.addEventListener("click", verificarYCrear);
+/**HACER LISTAS PARA TACHAR drag & drop, CRONOMETRO pomodoro----rutina----- */
+let modal = document.getElementById("crearNota");
+let buttonOpen = document.querySelector(".openModal");
+buttonOpen.addEventListener("click", ()=>{
+    modal.classList.remove("hidden");
+})
+
+/*********eventos para agregar palabra********** */
+document.getElementById("new").addEventListener("click", (event)=>{
+    verificarYCrear(event);
+})
+document.getElementById("closeModal").addEventListener("click",(event)=>{
+    event.preventDefault();
+    closen();
+})
 
 let errorTitulo = document.getElementById("errorTitulo");
 let errorTexto = document.getElementById("errorTexto");
-let form = document.querySelector(".form");
 
 function validarEntrada(inputs){
     if (inputs.length == 0){
@@ -19,8 +23,9 @@ function validarEntrada(inputs){
     }
    return false
 }
-function verificarYCrear(evento) {
-    evento.preventDefault();
+function verificarYCrear(event) {
+    event.preventDefault();
+    let form = document.querySelector("form");
     let entradaTitulo = document.getElementById("titulo").value;
     let entradaTexto = document.getElementById("text").value;
     let nuevaNota = obtenerDatos(form);
@@ -33,7 +38,7 @@ function verificarYCrear(evento) {
     }
     if(!validarEntrada(entradaTitulo) && !validarEntrada(entradaTexto)){
         agregarNota(nuevaNota);
-        saveNote(nuevaNota);
+        saveNoteLocalStorage(nuevaNota);
         closen();
     }
 /**si la entrada esta vacía muestra error */
@@ -44,7 +49,6 @@ function verificarYCrear(evento) {
         errorTexto.classList.remove("hidden");
     }
 }
-
 
 function obtenerDatos(form){
     /**form.name.value <- esto es del atributo name*/
@@ -57,7 +61,7 @@ function obtenerDatos(form){
     return nuevaNota;
 }
 
-/*********funciones genericas para toda la página************* */
+/*********contruir notas en html************* */
 
 function construirNota(nuevaNota){
     let note = document.createElement("article");
@@ -72,6 +76,7 @@ function construirNota(nuevaNota){
     options.appendChild(eliminar());
     options.appendChild(favorite(nuevaNota));
     options.appendChild(labelHeart(nuevaNota));
+    options.appendChild(crearElementos("p", "editar","editar"));
     return note;
 }
 
@@ -84,7 +89,6 @@ function agregarNota(nuevaNota){
         note.setAttribute("favorite", "true");
         gradientMash(note);
         favorite(nuevaNota).checked = true;
-        console.log(favorite(nuevaNota));
      } else {
         note.setAttribute("favorite", "false");
      }
@@ -98,7 +102,6 @@ function crearElementos(element,dato,clase) {
     creando.textContent = dato;
     return creando;
 }
-/**close button */
 function closen(){
     modal.classList.add("hidden");
     document.querySelector(".form").reset();

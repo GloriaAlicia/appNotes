@@ -19,19 +19,18 @@ function modo() {
 /*****guardar en localStorage ********************/
 function saveDarkMode(){
     if (button.checked){
-        localStorage.setItem("darkMode", "true");
+        localStorage.setItem("darkMode", JSON.stringify(true));
     } else {
-        localStorage.setItem("darkMode", "false");
+        localStorage.setItem("darkMode", JSON.stringify(false));
     }
 }
 
-
 document.addEventListener("DOMContentLoaded",function(event){
-    let saved = localStorage.getItem("darkMode");
-    if (saved == "false") {
+    let saved = JSON.parse(localStorage.getItem("darkMode"));
+    if (saved == false) {
         modo();
     } 
-    if(saved == "true") {
+    if(saved == true) {
         button.checked = true;
         modal.classList.remove("oscuro");
         todo.classList.remove("oscuro");

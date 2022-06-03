@@ -34,6 +34,7 @@ function favorite(nuevaNota) {
 function saveFavorite(idAqui, buttonFavorite){
     let all = JSON.parse(localStorage.getItem("allNotes"));
     let nota = all.filter(element => element.id == idAqui);
+    //de todas las notas, buscar la correcta por el id, ir al unico y primer elemento de la busqueda por id, ya que en localS esta en un array anidado de objetos
     let convertir = nota[0];
 
     if(buttonFavorite.checked){

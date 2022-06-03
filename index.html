@@ -21,26 +21,20 @@
                 <input type="checkbox" name="darkMode" id="activar">
                 <label for="activar" class="switch"></label>
             </li>
+
+            <li><a href="./subpages/to-do.html">To-do list</a></li>
         </ul>
     </nav>
     <main class="container">
         <label for="filtrar"> <img src="./assets/icons/search.svg" alt="buscar"> </label>
         <input type="text" name="filtro" id="filtrar" placeholder="buscar">
         <!--create a new note-->
-        <article class="new">
-            <p>Agregar nueva nota</p>
-        </article>
-        
+        <button class="openModal">+</button>
         <section class="wrapper">
-            <article class="notes">
-                <h3>Bienvenido</h3>
-                <p class="text">nota default</p>
-                <img src="./assets/icons/heart-empty.svg" alt="">
-            </article>
         </section>
 <!--ventana para crear nueva nota-->
-        <section class="windowModal">
-            <article class="modal hidden">
+<section class="windowModal">
+            <article class="modal hidden" id="crearNota">
                 <div class="content">
                     <h2>Crear una nueva nota</h2>
                     <form class="form">
@@ -55,17 +49,45 @@
                             <textarea name="textoNota" id="text" class="textarea" placeholder="Escribe aquí"></textarea>
                             <p id="errorTexto" class="alerta hidden">El texto no puede estar vacío</p>
                         </div>
-                        <button id="new">Crear</button>
+                        <div class="buttons">
+                            <button id="new">Crear</button>
+                            <button id="closeModal">Cerrar</button>
+                        </div>
                     </form>
                 </div>
             </article>
-        </section>
+</section>
+<!--ventana para editar una nota-->
+<section class="windowModal">
+    <article class="modal hidden" id="modalEditor">
+        <div class="content">
+            <h2>Editar nota</h2>
+            <form class="form">
+                <div class="field">
+                    <label for="editorTitulo">Titulo</label>
+                    <input id="editorTitulo" name="titulo" type="text">
+                    <p id="errorTitulo" class="alerta hidden">El titulo no puede estar vacío</p>
+                </div>
+                <div class="field">
+                    <label for="editorText">Nota</label>
+                    <textarea name="textoNota" id="editorText" class="textarea"></textarea>
+                    <p id="errorTexto" class="alerta hidden">El texto no puede estar vacío</p>
+                </div>
+                <div class="buttons">
+                    <button id="editado">Editar</button>
+                    <button id="cerrarEditor">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </article>
+</section>
     </main>
     <script src="./scripts/app.js"></script>
     <script src="./scripts/eliminar.js"></script>
     <script src="./scripts/modoOscuro.js"></script>
-    <script src="./scripts/filtrar.js"></script>
+    <script src="./scripts/buscar.js"></script>
     <script src="./scripts/localStorage.js"></script>
     <script src="./scripts/favoritos.js"></script>
+    <script src="./scripts/editar.js"></script>
 </body>
 </html>
