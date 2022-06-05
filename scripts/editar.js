@@ -23,10 +23,16 @@ contenedorNotas.addEventListener("click", (event)=>{
         //guardando...
         document.getElementById("editado").onclick = (event)=>{
             event.preventDefault();
-            $textoTitulo.textContent = document.getElementById("editorTitulo").value;
-            $textoNota.textContent = document.getElementById("editorText").value;
-            editNotesLocalStorage(notaEditando);
-            document.getElementById("modalEditor").classList.add("hidden");
+            if(document.getElementById("editorTitulo").value === "" || document.getElementById("editorText").value === ""){
+                //mostrar alerta "algo ésta vacío"
+                document.getElementById("alertaEditor").classList.remove("hidden");
+            }else{
+                $textoTitulo.textContent = document.getElementById("editorTitulo").value;
+                $textoNota.textContent = document.getElementById("editorText").value;
+                editNotesLocalStorage(notaEditando);
+                document.getElementById("modalEditor").classList.add("hidden");
+                document.getElementById("alertaEditor").classList.add("hidden");
+            }
         }
     }
 })
@@ -44,4 +50,5 @@ function editNotesLocalStorage(notaEditando){
 document.getElementById("cerrarEditor").addEventListener("click",(event)=>{
     event.preventDefault();
     document.getElementById("modalEditor").classList.add("hidden");
+    document.getElementById("alertaEditor").classList.add("hidden");
 })

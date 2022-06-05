@@ -15,14 +15,14 @@
 </head>
 <body>
     <nav>
-        <ul><h1>Notas</h1></ul>
+        <ul><a href="./index.html"><h1>Notas</h1></a></ul>
         <ul>
             <li>
                 <input type="checkbox" name="darkMode" id="activar">
                 <label for="activar" class="switch"></label>
             </li>
 
-            <li><a href="./subpages/to-do.html">To-do list</a></li>
+            <li><a href="./to-doAndScripts/to-do.html">To-do list</a></li>
         </ul>
     </nav>
     <main class="container">
@@ -63,15 +63,14 @@
         <div class="content">
             <h2>Editar nota</h2>
             <form class="form">
+                <p id="alertaEditor" class="alerta hidden">Algo esta vacío</p>
                 <div class="field">
                     <label for="editorTitulo">Titulo</label>
                     <input id="editorTitulo" name="titulo" type="text">
-                    <p id="errorTitulo" class="alerta hidden">El titulo no puede estar vacío</p>
                 </div>
                 <div class="field">
                     <label for="editorText">Nota</label>
                     <textarea name="textoNota" id="editorText" class="textarea"></textarea>
-                    <p id="errorTexto" class="alerta hidden">El texto no puede estar vacío</p>
                 </div>
                 <div class="buttons">
                     <button id="editado">Editar</button>
