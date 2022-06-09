@@ -33,8 +33,8 @@
         <section class="wrapper">
         </section>
 <!--ventana para crear nueva nota-->
-<section class="windowModal">
-            <article class="modal hidden" id="crearNota">
+<section class="windowModal hidden" id="crearNota">
+            <article class="modal">
                 <div class="content">
                     <h2>Crear una nueva nota</h2>
                     <form class="form">
@@ -50,16 +50,16 @@
                             <p id="errorTexto" class="alerta hidden">El texto no puede estar vacío</p>
                         </div>
                         <div class="buttons">
-                            <button id="new">Crear</button>
                             <button id="closeModal">Cerrar</button>
+                            <button id="new" class="primary-button">Crear</button>
                         </div>
                     </form>
                 </div>
             </article>
 </section>
 <!--ventana para editar una nota-->
-<section class="windowModal">
-    <article class="modal hidden" id="modalEditor">
+<section class="windowModal hidden" id="modalEditor">
+    <article class="modal" >
         <div class="content">
             <h2>Editar nota</h2>
             <form class="form">
@@ -73,8 +73,8 @@
                     <textarea name="textoNota" id="editorText" class="textarea"></textarea>
                 </div>
                 <div class="buttons">
-                    <button id="editado">Editar</button>
                     <button id="cerrarEditor">Cancelar</button>
+                    <button id="editado" class="primary-button">Editar</button>
                 </div>
             </form>
         </div>

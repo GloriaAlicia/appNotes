@@ -10,6 +10,8 @@
     
     <link rel="stylesheet" href="../styles/normalize.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/to-do.css">
+    <link rel="icon" href="../icon.png"/>
     <title>To-do list</title>
 </head>
 <body>
@@ -26,9 +28,45 @@
     </nav>
 
     <main class="container">
-        <h2>Edita o crea una lista</h2>
-        <p>en proceso...</p>
+        <p>puedes agregar hasta 5 tareas por lista</p>
+        <section class="wrapper"></section>
         <button class="openModal">+</button>
+
+
+    <section class="windowModal hidden" id="form-To-do"><!--hidden-->
+        <article class="modal">
+            <div class="content">
+                <h2>Crea una lista</h2>
+                <form class="form">
+                    <!-- <p id="alertaEditor" class="alerta hidden">Algo esta vacío</p> -->
+                    <div class="fieldTo-do">
+                        <label for="to-doTitulo">Titulo</label>
+                        <input id="to-doTitulo" name="List" type="text" placeholder="se usará para toda la lista">
+                    </div>
+                    <div class="fieldTo-do">
+                        <label for="task">Tarea</label>
+                        <button id="moreTasks">+</button>
+                        <input id="task" name="List" type="text" placeholder="presiona + para seguir agregando">
+                    </div>
+
+                    <details class="field">
+                        <summary> <h4>subtareas</h4> </summary>
+                        <input id="sub1" name="List" type="text" placeholder="uno" class="subtask">
+                        <input id="sub2" name="List" type="text" placeholder="dos" class="subtask">
+                        <input id="sub3" name="List" type="text" placeholder="tres" class="subtask">
+                    </details>
+
+                    <div class="buttons">
+                        <button id="cerrarModalTO">Cancelar</button>
+                        <button id="agregarNuevaLista" class="primary-button">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </article>
+    </section>
+
+
     </main>
+    <script src="./to-do.js"></script>
 </body>
 </html>

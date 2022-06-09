@@ -1,10 +1,4 @@
-/**practica de delegación de eventos
-
-utilizar la misma ventana para editar todas las notas/----tomar el contenido de la nota (atributo number) -> contenido
-boton editar(reemplazar el contenido html/localStorage) / cancelar-ocultar ventana
-probar validaciones
-!!! cerrar cierra todas las ventanas con la clase modal
-*/
+/**practica de delegación de eventos*/
 
 let contenedorNotas = document.querySelector(".wrapper")
 contenedorNotas.addEventListener("click", (event)=>{
@@ -46,7 +40,6 @@ function editNotesLocalStorage(notaEditando){
     let convertJson = JSON.stringify(allNotes);
     localStorage.setItem("allNotes",convertJson);
 }
-
 document.getElementById("cerrarEditor").addEventListener("click",(event)=>{
     event.preventDefault();
     document.getElementById("modalEditor").classList.add("hidden");

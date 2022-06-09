@@ -116,9 +116,11 @@ textarea {
 }
 
 
-button,
-input { /* 1 */
+button { /* 1 */
   overflow: visible;
+}
+input{
+  overflow: hidden;
 }
 
 button,

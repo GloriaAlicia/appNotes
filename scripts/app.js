@@ -1,7 +1,6 @@
 /**HACER LISTAS PARA TACHAR drag & drop, CRONOMETRO pomodoro----rutina----- */
-let modal = document.getElementById("crearNota");
-let buttonOpen = document.querySelector(".openModal");
-buttonOpen.addEventListener("click", ()=>{
+document.querySelector(".openModal").addEventListener("click", ()=>{
+    let modal = document.getElementById("crearNota");
     modal.classList.remove("hidden");
 })
 
@@ -103,7 +102,7 @@ function crearElementos(element,dato,clase) {
     return creando;
 }
 function closen(){
-    modal.classList.add("hidden");
+    document.getElementById("crearNota").classList.add("hidden");
     document.querySelector(".form").reset();
     errorTitulo.classList.add("hidden");
     errorTexto.classList.add("hidden");
