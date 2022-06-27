@@ -49,6 +49,7 @@ nav a:hover{
 }
 .switch{
     position: relative;
+    display: flex;
     width: 2.5rem;
     height: 1rem;
     border: solid 1px var(--wait);
@@ -163,9 +164,16 @@ button{
 }
 .stop{
     padding: 0;
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .stop::after{
     content:url(../assets/icons/trash-solid.svg);
+    height: 0.8rem;
+    width: 14px;
+    /* position: absolute; */
 }
 .favorite{
     display: flex;
@@ -259,9 +267,11 @@ input[type="checkbox"]:checked + .favorite::after{
     overflow: hidden scroll;
 }
 label{
-    display: flex;
     align-items: center;
     font-size: 1.4rem;
+}
+label img{
+    height: 1rem;
 }
 summary{
     cursor: pointer;
